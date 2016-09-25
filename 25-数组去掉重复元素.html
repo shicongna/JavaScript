@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var arr = ["超人","蝙蝠侠","绿巨人","钢铁侠","黑寡妇","超人","钢铁侠","adf"];
+
+		function fun(array){
+			var newArr = [];
+			var bool = true;
+			for(var i = 0;i<array.length;i++){
+				bool = true;
+				for(var j = 0;j<newArr.length;j++){
+					if(newArr[j] === array[i]){
+						bool = false;
+					}
+				}
+				if(bool){
+					newArr.push(array[i]);
+				}
+			}
+			return newArr;
+		}
+
+
+		var result = fun(arr);
+		console.log(result);
+
+
+
+		// function noR(array){
+		// 	var newArr = [];
+		// 	var obj = {};
+		// 	for(var i = 0;i<array.length;i++){
+		// 		if(obj[array[i]] === undefined){
+		// 			obj[array[i]] = 1;
+		// 			newArr.push(array[i]);
+		// 		}
+		// 	}
+		// 	return newArr;
+		// }
+
+		var arr = [1,2,3,4,5,6];
+
+		swap(arr,2,3);
+
+		function swap(){
+
+		}
+
+
+	</script>
+</body>
+</html>

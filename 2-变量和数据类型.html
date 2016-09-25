@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数据类型</title>
+	<style>
+		*{
+			margin:2px;
+			padding:2px;
+		}
+		p{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<h1>变量：声明变量
+		<p>es5:var a=5;</p>
+		<p>es6:let a=5;<br>
+				const li=document.querySelector("#li")</p>
+	</h1>
+	<h1>数据类型：
+		<p>对象 数字 字符串 boolean null undefined </p></h1>
+	<h2>引用数据类型：
+		<p>对象</p></h2>
+	<h2>原始数据类型：
+		<p>数字 字符串 boolean null undefined</p></h2>
+	<h1>原始数据类型与引用数据类型区别:
+		<p>赋值 比较 传参（详见源代码）</p></h1>
+	<h1>类型转换:
+		<span>见源代码</span>
+	</h1>
+	<h1>类型检测：typeof检测原始数据类型；instanceof检测隐式转换</h1>
+	<script>
+		// 赋值
+		var num1=1;
+		var num2=num1;
+		var str1="hello";
+		var str2=str1;
+
+		// var obj1={
+		// 	name:"wang",
+		// 	age:12
+		// }
+		// var obj2=obj1
+		// obj2.name="lee"
+		// console.log(obj1)
+		// console.log(obj2)
+		// 比较
+		var num1=10;
+		var num2=12;
+
+		// var obj1={
+		// 	name:"wang",
+		// 	age:12
+		// }
+		// var obj2={
+		// 	name:"lee",
+		// 	age:13
+		// }
+		// console.log(obj1)
+		// console.log(obj2)
+		// 传参
+		var num1=15;
+		var num2=18;
+
+		var obj1={
+			name:"wang",
+			age:12,
+			sayName:function(name){
+				console.log("我是"+this.name)
+				console.log("我是"+name)
+			}
+		}
+		var obj2={
+			name:"lee",
+			age:13,
+			sayName:function(name){
+				console.log("我是"+this.name);
+			}
+		}
+		obj1.sayName("对象1");
+		obj2.sayName("对象2");
+		// 原始数据类型与引用数据类型区别正式版
+		// var str1 = "hello";
+		// var str2 = "hello";
+		// var result = str1 == str2;
+		// console.log(result)
+
+		// var obj1 = {name:"xiaoming"};
+		// var obj2 = {name:"xiaoming"};
+		// console.log(obj1 == obj2)
+
+		// var str1 = "hello";
+		// var str2 = str1;
+		// str1 = "world";
+		// console.log(str1);
+		// console.log(str2);
+
+		// var obj1 = {name:"xiaoming"};
+		// var obj2 = obj1;
+		// obj1.name = "xiaoliang";
+		// console.log(obj1.name);
+		// console.log(obj2.name);
+
+		// function fun(x){
+		// 	x = x + 10;
+		// }
+		// var n = 100;
+		// fun(n);
+		// console.log(n);
+
+		// var obj = {name:"xm"};
+		// function fun(o){
+		// 	o.name = "xl"
+		// }
+		// fun(obj);
+		// console.log(obj.name);
+
+		// 类型转换
+		// 数字-字符串：
+		var num=4;
+		var str1=num.toString()
+		var str2=String(num)
+		console.log(num)
+		console.log(str1)
+		console.log(str2)
+		// 数字-boolean
+		var num2=2
+		var bool2=Boolean(num2)
+		console.log(!num2)
+		console.log(bool2)
+		// 字符串-数字
+		var str="999.99"
+		var num1=Number(str)
+		var num2=parseInt(str)
+		var num3=parseFloat(str)
+		console.log(num1)
+		console.log(num2)
+		console.log(num3)
+		// 字符串-boolean
+		var str="hello"
+		var bool=Boolean(str)
+		console.log(!str)
+		console.log(bool)
+
+		// 类型检测
+		var str = "hello";
+		var num1 = 10;
+		var num2 = NaN;
+		var num3 = Infinity;
+		var bool = true;
+		var nu = null
+		var und;
+		var obj = {};
+		var reg = / /;
+		var date = new Date();
+		var arr = [];
+
+		// console.log(typeof obj)
+
+		console.log(arr instanceof Object);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数</title>
+</head>
+<body>
+	<h1>声明函数，函数表达式；函数声明提升</h1>
+	<h1>函数参数，返回值，调用函数</h1>
+	<h1>回调函数；递归函数；闭包封装；构造函数 原型 原型链 继承；</h1>
+	<h1>函数销毁机制</h1>
+	<script>
+		// 声明函数：
+		fun()
+		function fun(){
+
+		}
+		fun()
+		function a(){
+			fun()
+		}
+		// 函数表达式
+		var fun=function(){
+
+		}
+		fun()
+		// 闭包
+
+		var x = 10;
+		var y = 20;
+		function outFun(){
+			var x = 30;
+			var y = 40;
+			function inFun(){
+				var m = 60;
+				console.log(x);
+			}
+
+			return inFun;
+		}
+		var fun = outFun();
+		fun();
+
+		// 回调函数：把一个函数作为参数传给另一个函数  callback
+
+		function fun(callback){
+			callback();
+		}
+
+		fun(function(){
+			console.log("hello")
+		})
+
+	</script>
+</body>
+</html>

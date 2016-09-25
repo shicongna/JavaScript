@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="list" class="test1 test2 temp">
+		<li>1</li>
+		<li id="second">2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+
+	<script type="text/javascript">
+		var oLi = document.getElementById("second");
+		var oUl = document.getElementById("list");
+		console.log(siblings(oLi));
+
+		function index(element){
+			var arr = element.parentNode.children;
+			for(var i = 0;i<arr.length;i++){
+				if(arr[i] == element){
+					return i;
+				}
+			}
+		}
+
+		function siblings(element){
+			var arr = element.parentNode.children;
+			var newArr = [];
+			for(var i = 0;i<arr.length;i++){
+				if(arr[i] != element){
+					newArr.push(arr[i]);
+				}
+			}
+			return newArr;
+		}
+
+		function addClass(element,className){
+			element.className = element.className + " " + className;
+		}
+
+		function removeClass(element,className){
+			var arr = element.className.split(" ");
+			var newArr = [];
+			for(var i = 0;i<arr.length;i++){
+				if(arr[i] != className){
+					newArr.push(arr[i]);
+				}
+			}
+			var str = newArr.join(" ");
+			element.className = str;
+		}
+
+		removeClass(oUl,"temp");
+
+
+	</script>
+
+</body>
+</html>

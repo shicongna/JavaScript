@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">抽奖</button>
+	<script>
+		var personArr = [
+							"超人",
+							"蝙蝠侠",
+							"钢铁侠",
+							"绿巨人",
+							"黑寡妇",
+							"鹰眼",
+							"猩红女巫",
+							"美国队长",
+							"蜘蛛侠",
+							"蚁人",
+						];
+
+		var obj = {};
+		function selectPerson(){
+			var num = Math.floor(Math.random() * personArr.length);
+			var person = personArr[num];
+			if(obj[person] === undefined){
+				obj[person] = 1;
+				console.log(person);
+			}else if(getLength(obj) < personArr.length){
+				selectPerson();
+			}
+		}
+
+		function getLength(o){
+			var n = 0;
+			for(var i in o){
+				n++
+			}
+			return n;
+		}
+
+		var oBtn = document.querySelector("#btn");
+		oBtn.onclick = selectPerson;
+
+		// 数组方法
+		// var personArr = [
+		// 					"超人",
+		// 					"蝙蝠侠",
+		// 					"钢铁侠",
+		// 					"绿巨人",
+		// 					"黑寡妇",
+		// 					"鹰眼",
+		// 					"猩红女巫",
+		// 					"美国队长",
+		// 					"蜘蛛侠",
+		// 					"蚁人",
+		// 				];
+		// var arr = [];
+		// function selectPerson(){
+		// 	var num = Math.floor(Math.random() * personArr.length);
+		// 	var person = personArr[num];
+		// 	if(arr.length < personArr.length){
+		// 		for(var i = 0;i<arr.length;i++){
+		// 			if(arr[i] === person){
+		// 				selectPerson();
+		// 				return;
+		// 			}
+		// 		}
+		// 		console.log(person);
+		// 		arr.push(person);
+		// 	}
+
+		// }
+		// var oBtn = document.querySelector("#btn");
+		// oBtn.onclick = selectPerson;
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		span{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<h1>内置对象:
+		<span>数组、数学、日期、正则表达式、包装对象：Number String Boolean</span>
+	</h1>
+	<h1>关于内置对象的属性，方法（内置方法，    自定义方法）<br>
+
+		<span>数组：push,pop,unshift,shift,join,map(方法)；arr.length;arr[0](属性)</span><br>
+		<span>包装对象字符串：replace()替换方法（由于包装对象是系统内部包装，包装完即被销毁，不能用在浏览器上,可用在原始数据类型，字符串替换）</span>
+	
+	</h1>
+	
+	<h1>arguments
+		<span>详见代码</span></h1>
+	<script>
+		
+
+		
+
+		// setTimeout();
+		// setInterval();
+		// clearTimeout();
+		// clearInterval();
+
+		// var fun = function(str){
+		// 	console.log(str)
+		// }
+		
+		setInterval('fun("hello")',1000)
+
+		// var hello ="1+2";
+		// console.log(eval(hello));
+
+
+		// arguments
+
+		// 　　在JavaScript中，arguments是对象的一个特殊属性。arguments对象就像数组，但是它却不是数组。
+
+// 属性：
+
+// 　　length, 获取arguments对象的长度。
+
+// 　　callee, 引用当前正在执行的函数。
+
+ 
+
+编辑本段举例：
+
+1.参数的长度
+
+　　window.onload = function(){
+　　abc(1,2,3);
+　　}
+　　function abc(){
+
+　　//虽然这里没有引用参数，但是arguments仍能捕获到
+
+　　alert(arguments.length);
+
+　　}//output 3
+
+
+2.改变参数值
+
+　　function abc(x,y,z){
+
+　　arguments[2] = "hello";
+
+　　for(var i=0;i<=arguments.length;i+=){
+
+　　alert(" "+arguments[i]);
+
+　　}
+
+　　}//output: 1 2 hello
+
+3.递归
+
+　　求1到n的自然数之和
+
+ 
+
+　　function add(x){ 
+
+　　if(x == 1) return 1;
+
+　　else return n + arguments.callee(n-1);
+
+　　}
+
+　　其实callee对于没有命名的函数调用自身时就是一个福音了,比如对于没有命名的函数求1到n自然数之和
+
+ 
+
+　　var result = function(x){
+
+ 
+
+　　if(x == 1) return 1;
+
+ 
+
+　　return x+arguments.callee(x-1);
+
+ 
+
+　　}
+
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="btn" value="添加">
+	<ul id="list">
+		<li>香蕉 <span class="del">删除</span></li>
+		<li>苹果 <span class="del">删除</span></li>
+		<li>鸭梨 <span class="del">删除</span></li>
+	</ul>
+
+	<script>
+
+		var oTxt = document.querySelector("#txt");
+		var oBtn = document.querySelector("#btn");
+		var oList = document.querySelector("#list");
+
+		oBtn.addEventListener("click",function(){
+			var value = oTxt.value;
+			var txtNode = document.createTextNode(value);
+			var liNode = document.createElement("li");
+			liNode.appendChild(txtNode);
+			var spanNode = document.createElement("span");
+			spanNode.innerHTML = " 删除";
+			spanNode.className = "del";
+
+			liNode.appendChild(spanNode);
+			oList.appendChild(liNode);
+		},false)
+
+		// oList.onclick = function(event){
+		// 	var target = event.target;
+		// 	if(target.className == "del"){
+		// 		this.removeChild(target.parentNode);
+		// 	}
+
+		// }
+
+		oList.addEventListener("click",function(event){
+			var target = event.target;
+			if(target.className == "del"){
+				this.removeChild(target.parentNode);
+			}
+		},false)
+
+	</script>
+</body>
+</html>

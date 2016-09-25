@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>alert confirm prompt</h1>
+	<h1>计时器</h1>
+	<h1>location.href</h1>
+	<h1>window对象事件</h1>
+	<hr>
+	<input type="button" id="btn"  value="添加">
+	<ul id="list">
+		<li>香蕉</li>
+		<li>苹果</li>
+		<li>鸭梨</li>
+	</ul>
+	<hr>
+	<input type="button" id="start" value="开始">
+	<span class="num"></span>
+	<input type="button" id="stop" value="停止">
+	<hr>
+	<p><span class="seconds"></span>秒后跳转到百度</p>
+
+	<script type="text/javascript" src="script/jquery.js"></script>
+	<script>
+		// $("#btn").click(function(){
+		// 	 var content=prompt("请输入添加内容")
+		// 	 var li="<li>"+content+"</li>"
+		// 	 if(content){
+		// 	 	$("#list").append(li)
+		// 	 }
+		// })
+		$("#btn").click(function(){
+			var value=prompt("输入内容")
+			var li=$("<li></li>")
+			li.text(value)
+			if(value){
+			 	$("#list").append(li)
+			 }
+		})
+		// 计时器
+		// setTimeout();
+		// setInterval();
+		// clearTimeout();
+		// clearInterval();
+
+		// var fun = function(str){
+		// 	console.log(str)
+		// }
+		
+		// setInterval('fun("hello")',1000)
+
+		// var hello ="1+2";
+		// console.log(eval(hello));
+
+		var num=1;
+		// $(".num").text(num)
+		function fun(){
+			$(".num").text(num)
+			++num
+		}
+		var t=setInterval(fun,1000)
+		$(".num").text(t)
+		$("#start").click(function(){
+			t=setInterval(fun,1000)
+		})
+		$("#stop").click(function(){
+			clearInterval(t)
+			// console.log(m)
+		})
+
+		function fun2(){
+			var v=5;
+			console.log(v)
+		}
+		var m=fun2()
+
+		var num1=300
+		function fun1(){
+			$(".seconds").text(num1)
+			num1--
+			if(num1==0){
+				location.href="http://www.baidu.com"
+			}
+		}
+			setInterval(fun1,1000)
+
+			// window对象事件
+			window.onload=function(){}
+			alert("haha")
+		$(function(){})
+
+		window.onresize=function(){
+			alert("haha")
+		}
+
+		// $(window).resize(function())
+
+		window.onscroll=function(){
+			console.log("nihao")
+		}
+		// $(window).scroll(function(){})
+	</script>
+</body>
+</html>

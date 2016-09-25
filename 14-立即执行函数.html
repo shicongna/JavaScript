@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+
+	<script type="text/javascript">
+	/*var fun=function(){
+		alert("hello")
+		
+	}
+	var temp=fun()
+	console.log(temp)*/
+	var aLi=document.querySelectorAll("li")
+	for(var i=0;i<aLi.length;i++){
+		aLi[i].onclick=(function(x){
+			return function(){
+				console.log(x)
+			}
+		})(i)
+	}
+	// 点击事件后应为函数，执行其内容
+	</script>
+</body>
+</html>
