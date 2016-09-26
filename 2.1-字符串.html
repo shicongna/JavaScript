@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// 截取字符串片段
+		var str="abcdefg"
+		var result=str.substring(4)
+		console.log(result)
+		substring()
+		substr()
+		indexOf()
+		// 字符串字符加空格
+		 function getString(myString) {
+			 // return myString.split("").join(" ")
+			 var reg=/[a-z]/g
+			 return myString.replace(reg,"$& ")
+
+    }
+    var result1=getString(str)
+    console.log(result1)
+
+    // 去掉空格
+    var str2=" h l l o w o r d"
+    function ridtab(str){
+    	var re=/[\s]/g
+    	return str.replace(re,"")
+    }
+    console.log(ridtab(str2))
+	</script>
+</body>
+</html>

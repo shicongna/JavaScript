@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.big{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+		}
+		.small{
+			width: 100px;
+			height: 100px;
+			background-color: #f00;
+		}
+	</style>
+</head>
+<body>
+	<div class="big">
+		<div class="small"></div>
+	</div>
+	<script>
+		document.querySelector(".big").onclick=function(){
+			alert("big")
+		}
+		document.querySelector(".small").onclick=function(event){
+			event.stopPropagation()
+			alert("small")
+		}
+	</script>
+</body>
+</html>

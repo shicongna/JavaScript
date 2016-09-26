@@ -24,22 +24,15 @@
 
 		}
 		fun()
-		// 闭包
-
-		var x = 10;
-		var y = 20;
-		function outFun(){
-			var x = 30;
-			var y = 40;
-			function inFun(){
-				var m = 60;
-				console.log(x);
+		// 闭包：函数嵌套函数形成闭包(作用域链；销毁机制)
+		function outfun(){
+			var num=12;
+			function infun(){
+				return num
 			}
-
-			return inFun;
+			return infun
 		}
-		var fun = outFun();
-		fun();
+		console.log(outfun()())
 
 		// 回调函数：把一个函数作为参数传给另一个函数  callback
 
