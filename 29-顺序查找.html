@@ -17,6 +17,19 @@
 		}
 		
 		console.log(search(arr,2))
+
+		function searchMax(array){
+			var max = array[0];
+			for(var i = 0;i<array.length;i++){
+				if(max < array[i]){
+					max = array[i];
+				}
+			}
+			return max;
+		}
+
+		var re = searchMax(arr);
+		console.log(re);
 	</script>
 </body>
 </html>
