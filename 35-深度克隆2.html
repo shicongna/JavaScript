@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var obj1 = {
+			"name":"xiaoming",
+			"age":12,
+			"sex":"male",
+			"frineds":["lily","lucy"],
+			"data":{
+				"secret":"hehe"
+			}
+		}
+
+		// var obj2 = obj1;
+
+		function cloneObj(option){
+			if(option instanceof Array){
+				var newOption = [];
+			}else if(option instanceof Object){
+				var newOption = {};
+			}
+
+			for(var key in option){
+				if(typeof(option[key]) == "object"){
+					newOption[key] = cloneObj(option[key]);
+				}else{
+					newOption[key] = option[key];
+				}
+
+			}
+
+			return newOption
+		}
+
+
+		var obj2 = cloneObj(obj1);
+		obj2.frineds[0] = "小红";
+		obj2.data["secret"] = "xixi";
+		console.log(obj1);
+		console.log(obj2);
+	</script>
+</body>
+</html>

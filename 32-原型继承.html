@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function Father(name){
+			this.name=name;
+		}
+		Father.prototype.firstName="张"
+		Father.prototype.beatSon=function(){
+			console.log("打儿子")
+		}
+		Father.prototype.sayName=function(){
+			console.log("我是"+this.firstName+this.name)
+		}
+		function Son(name){
+			this.name=name;
+		}
+		Son.prototype=new Father()
+		var father=new Father("三")
+		var son=new Son("涛")
+		console.log(father.name)
+		father.beatSon()
+		father.sayName()
+
+		son.beatSon()
+	</script>
+</body>
+</html>
