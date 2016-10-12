@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//数组的解构赋值
+		// let [num1,num2] = [12,30];
+
+		// [num1,num2] = [num2,num1]
+
+		// console.log(num1);
+		// console.log(num2);
+	//对象的解构赋值
+
+	// let {name,age} = {name:"xiaoming",age:12};
+	// console.log(name);
+	// console.log(age);
+
+	// function fun(){
+	// 	let arr = ["美国队长","超人"];
+	// 	return arr;
+	// }
+	// let [name1,name2] = fun();
+
+	// console.log(name1);
+	// console.log(name2);
+
+	// function fun(){
+	// 	let obj = {
+	// 		name:"xiaoming",
+	// 		age:12
+	// 	}
+	// 	return obj;
+	// }
+
+	// let {age,name} = fun();
+	// console.log(age);
+	// console.log(name);
+
+	function fun({name,age}){
+		console.log(name);
+		console.log(age);
+	}
+
+ 	var obj = {
+ 		name:"xiaoming",
+ 		age:12
+ 	}
+
+ 	fun(obj);
+
+
+	</script>
+</body>
+</html>
